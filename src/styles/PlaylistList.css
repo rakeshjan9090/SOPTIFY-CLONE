@@ -1,0 +1,11 @@
+
+.playlistList {
+    padding: 20px;
+  }
+  
+  .playlistContainer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  

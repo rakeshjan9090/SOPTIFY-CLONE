@@ -1,0 +1,72 @@
+.songList {
+    padding: 20px;
+  }
+  
+  .songItemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .songItem {
+    display: flex;
+    align-items: center;
+    background: #121212;
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+  }
+  
+  .songItem img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .songName {
+    flex: 1;
+    color: white;
+  }
+  
+  .songlistplay {
+    color: white;
+    cursor: pointer;
+  }
+  
+  .songlistplay .fa-circle-play {
+    font-size: 20px;
+    color: green;
+  }
+
+  .playlistCard {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #181818;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .playlistCard:hover {
+    transform: scale(1.05);
+  }
+  
+  .playlistCover {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .playlistInfo h3 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .playlistInfo p {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  

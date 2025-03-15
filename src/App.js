@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 
 import React, { useState, } from "react";
@@ -12,6 +12,8 @@ import Home from "./pages/Home";
 import Library from "./pages/Library";
 import Sidebar from "./components/Sidebar";
 import Player from "./components/Player";
+
+
 import "./styles/global.css";
 
 //import "./style.css";
@@ -23,51 +25,56 @@ import "./styles/global.css";
 //   faStepForward,
 // } from "@fortawesome/free-solid-svg-icons";
 
-const songsData = [
-  {
-    songName: "Diya Aur Baati Hum",
-    filePath: "./song/1.mp3",
-    coverPath: "./covers/cover1.jpg",
-  },
-  {
-    songName: "Har Funn Maula",
-    filePath: "./song/2.mp3",
-    coverPath: "./covers/cover2.jpg",
-  },
-  {
-    songName: "Guilty - Karan Aujla",
-    filePath: "./song/3.mp3",
-    coverPath: "./covers/cover3.jpg",
-  },
-  {
-    songName: "Tu Hi Meri Shab Hai - Gangster 320Kbps",
-    filePath: "song/4.mp3",
-    coverPath: "covers/cover4.jpg",
-  },
-  {
-    songName: "Lut Gaye - Jubin Nautiyal",
-    filePath: "song/5.mp3",
-    coverPath: "covers/cover5.jpg",
-  },
-  {
-    songName: "Mummy Kassam - Coolie No 1",
-    filePath: "song/6.mp3",
-    coverPath: "covers/cover6.jpg",
-  },
-  {
-    songName: "Jai Veeru - Khasa Aala Chahar",
-    filePath: "song/7.mp3",
-    coverPath: "covers/cover7.jpg",
-  },
-  {
-    songName: "Saiyyonee - Yasser Desai",
-    filePath: "song/8.mp3",
-    coverPath: "covers/cover8.jpg",
-  },
-];
+// const songsData = [
+//   {
+//     songName: "Diya Aur Baati Hum",
+//     filePath: "./song/1.mp3",
+//     coverPath: ".//cover1.jpg",
+//   },
+//   {
+//     songName: "Har Funn Maula",
+//     filePath: "./song/2.mp3",
+//     coverPath: "./cover2.jpg",
+//   },
+//   {
+//     songName: "Guilty - Karan Aujla",
+//     filePath: "./song/3.mp3",
+//     coverPath: ".//cover3.jpg",
+//   },
+//   {
+//     songName: "Tu Hi Meri Shab Hai - Gangster 320Kbps",
+//     filePath: "song/4.mp3",
+//     coverPath: "covers/cover4.jpg",
+//   },
+//   {
+//     songName: "Lut Gaye - Jubin Nautiyal",
+//     filePath: "song/5.mp3",
+//     coverPath: "covers/cover5.jpg",
+//   },
+//   {
+//     songName: "Mummy Kassam - Coolie No 1",
+//     filePath: "song/6.mp3",
+//     coverPath: "covers/cover6.jpg",
+//   },
+//   {
+//     songName: "Jai Veeru - Khasa Aala Chahar",
+//     filePath: "song/7.mp3",
+//     coverPath: "covers/cover7.jpg",
+//   },
+//   {
+//     songName: "Saiyyonee - Yasser Desai",
+//     filePath: "song/8.mp3",
+//     coverPath: "covers/cover8.jpg",
+//   },
+// ];
 
 function App() {
   const [currentSong, setCurrentSong] = useState(songsData[0]);
+  const songsData = [
+    { id: 1, title: "Song 1", artist: "Artist 1" },
+    { id: 2, title: "Song 2", artist: "Artist 2" }
+  ];
+  
 
   return (
     <div className="app">
