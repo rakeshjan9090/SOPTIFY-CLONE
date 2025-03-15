@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Service";
 import Contact from "./pages/Contact";
+import Sidebar from "./components/Sidebar";
+import Player from "./components/Player";
+import "./styles/global.css";
 
 //import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +20,7 @@ import {
   faStepForward,
 } from "@fortawesome/free-solid-svg-icons";
 
-const songsList = [
+const songsData = [
   {
     songName: "Diya Aur Baati Hum",
     filePath: "./song/1.mp3",
@@ -61,63 +64,66 @@ const songsList = [
 ];
 
 function App() {
-  <Router>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  </Router>
-  const [songIndex, setSongIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(new Audio(songsList[songIndex].filePath));
-
-  const togglePlayPause = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const nextSong = () => {
-    let newIndex = songIndex + 1 >= songsList.length ? 0 : songIndex + 1;
-    setSongIndex(newIndex);
-    audioRef.current.src = songsList[newIndex].filePath;
-    audioRef.current.play();
-    setIsPlaying(true);
-  };
-
-  const prevSong = () => {
-    let newIndex = songIndex - 1 < 0 ? songsList.length - 1 : songIndex - 1;
-    setSongIndex(newIndex);
-    audioRef.current.src = songsList[newIndex].filePath;
-    audioRef.current.play();
-    setIsPlaying(true);
-  };
-
-  return (
-    <div className="App">
-      <h1>Spotify Clone</h1>
-      <div className="player">
-        <img src={songsList[songIndex].coverPath} alt="cover" />
-        <h2>{songsList[songIndex].songName}</h2>
-        <div className="controls">
-          <FontAwesomeIcon icon={faStepBackward} size="2x" onClick={prevSong} />
-          <FontAwesomeIcon
-            icon={isPlaying ? faPauseCircle : faPlayCircle}
-            size="2x"
-            onClick={togglePlayPause}
-          />
-          <FontAwesomeIcon icon={faStepForward} size="2x" onClick={nextSong} />
+    const [currentSong, setCurrentSong] = useState(songsData[0]);
+  
+    return (
+      <div className="app">
+        <Navbar />
+        <div className="main">
+          <Sidebar />
+          <Player songs={songsData} currentSong={currentSong} setCurrentSong={setCurrentSong} />
         </div>
       </div>
-    </div>
+    );
+
+  // const [songIndex, setSongIndex] = useState(0);
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const audioRef = useRef(new Audio(songsList[songIndex].filePath));
+
+  // const togglePlayPause = () => {
+  //   if (isPlaying) {
+  //     audioRef.current.pause();
+  //   } else {
+  //     audioRef.current.play();
+  //   }
+  //   setIsPlaying(!isPlaying);
+  // };
+
+  // const nextSong = () => {
+  //   let newIndex = songIndex + 1 >= songsList.length ? 0 : songIndex + 1;
+  //   setSongIndex(newIndex);
+  //   audioRef.current.src = songsList[newIndex].filePath;
+  //   audioRef.current.play();
+  //   setIsPlaying(true);
+  // };
+
+  // const prevSong = () => {
+  //   let newIndex = songIndex - 1 < 0 ? songsList.length - 1 : songIndex - 1;
+  //   setSongIndex(newIndex);
+  //   audioRef.current.src = songsList[newIndex].filePath;
+  //   audioRef.current.play();
+  //   setIsPlaying(true);
+  // };
+
+  // return (
+  //   <div className="App">
+  //     <h1>Spotify Clone</h1>
+  //     <div className="player">
+  //       <img src={songsList[songIndex].coverPath} alt="cover" />
+  //       <h2>{songsList[songIndex].songName}</h2>
+  //       <div className="controls">
+  //         <FontAwesomeIcon icon={faStepBackward} size="2x" onClick={prevSong} />
+  //         <FontAwesomeIcon
+  //           icon={isPlaying ? faPauseCircle : faPlayCircle}
+  //           size="2x"
+  //           onClick={togglePlayPause}
+  //         />
+  //         <FontAwesomeIcon icon={faStepForward} size="2x" onClick={nextSong} />
+  //       </div>
+  //     </div>
+  //   </div>
   
-  );
+  // );
 }
 
 export default App;
