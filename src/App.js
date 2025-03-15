@@ -1,24 +1,27 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React, { useState, useRef } from "react";
+
+import React, { useState, } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Service";
-import Contact from "./pages/Contact";
+// import About from "./pages/About";
+// import Services from "./pages/Service";
+//import Contact from "./pages/Contact";
+import Library from "./pages/Library";
 import Sidebar from "./components/Sidebar";
 import Player from "./components/Player";
 import "./styles/global.css";
 
 //import "./style.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlayCircle,
-  faPauseCircle,
-  faStepBackward,
-  faStepForward,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faPlayCircle,
+//   faPauseCircle,
+//   faStepBackward,
+//   faStepForward,
+// } from "@fortawesome/free-solid-svg-icons";
 
 const songsData = [
   {
@@ -64,17 +67,29 @@ const songsData = [
 ];
 
 function App() {
-    const [currentSong, setCurrentSong] = useState(songsData[0]);
-  
-    return (
-      <div className="app">
+  const [currentSong, setCurrentSong] = useState(songsData[0]);
+
+  return (
+    <div className="app">
+      <Router> {/* ✅ Ensure Router is wrapping Routes */}
         <Navbar />
         <div className="main">
           <Sidebar />
-          <Player songs={songsData} currentSong={currentSong} setCurrentSong={setCurrentSong} />
+          <Player
+            songs={songsData}
+            currentSong={currentSong}
+            setCurrentSong={setCurrentSong}
+          />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/library" element={<Library />} />
+            <Route path="/player" element={<Player />} />
+          </Routes>
         </div>
-      </div>
-    );
+      </Router> 
+    </div>
+  );
 
   // const [songIndex, setSongIndex] = useState(0);
   // const [isPlaying, setIsPlaying] = useState(false);
@@ -122,7 +137,7 @@ function App() {
   //       </div>
   //     </div>
   //   </div>
-  
+
   // );
 }
 
