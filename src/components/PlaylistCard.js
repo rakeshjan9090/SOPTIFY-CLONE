@@ -1,7 +1,8 @@
 import React from "react";
 import "./PlaylistCard.css";
+import ".playlistList.js";
 
-const PlaylistCard = ({ playlist }) => {
+const PlaylistCard = ({ playlistList }) => {
   return (
     <div className="playlistCard">
       <img src={playlist.cover} alt={playlist.name} className="playlistCover" />

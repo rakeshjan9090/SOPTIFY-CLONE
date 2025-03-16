@@ -1,4 +1,4 @@
-// import logo from "./logo.svg";
+import logo from "./logo.svg";
 import "./App.css";
 
 import React, { useState, } from "react";
@@ -9,64 +9,20 @@ import Home from "./pages/Home";
 // import About from "./pages/About";
 // import Services from "./pages/Service";
 //import Contact from "./pages/Contact";
+
 import Library from "./pages/Library";
+
 import Sidebar from "./components/Sidebar";
 import Player from "./components/Player";
+// Remove unused imports
+// import logo from './logo.svg'; 
+import Search from './pages/Search'; // Ensure correct import
+
+
+
 
 
 import "./styles/global.css";
-
-//import "./style.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faPlayCircle,
-//   faPauseCircle,
-//   faStepBackward,
-//   faStepForward,
-// } from "@fortawesome/free-solid-svg-icons";
-
-// const songsData = [
-//   {
-//     songName: "Diya Aur Baati Hum",
-//     filePath: "./song/1.mp3",
-//     coverPath: ".//cover1.jpg",
-//   },
-//   {
-//     songName: "Har Funn Maula",
-//     filePath: "./song/2.mp3",
-//     coverPath: "./cover2.jpg",
-//   },
-//   {
-//     songName: "Guilty - Karan Aujla",
-//     filePath: "./song/3.mp3",
-//     coverPath: ".//cover3.jpg",
-//   },
-//   {
-//     songName: "Tu Hi Meri Shab Hai - Gangster 320Kbps",
-//     filePath: "song/4.mp3",
-//     coverPath: "covers/cover4.jpg",
-//   },
-//   {
-//     songName: "Lut Gaye - Jubin Nautiyal",
-//     filePath: "song/5.mp3",
-//     coverPath: "covers/cover5.jpg",
-//   },
-//   {
-//     songName: "Mummy Kassam - Coolie No 1",
-//     filePath: "song/6.mp3",
-//     coverPath: "covers/cover6.jpg",
-//   },
-//   {
-//     songName: "Jai Veeru - Khasa Aala Chahar",
-//     filePath: "song/7.mp3",
-//     coverPath: "covers/cover7.jpg",
-//   },
-//   {
-//     songName: "Saiyyonee - Yasser Desai",
-//     filePath: "song/8.mp3",
-//     coverPath: "covers/cover8.jpg",
-//   },
-// ];
 
 function App() {
   const [currentSong, setCurrentSong] = useState(songsData[0]);
@@ -80,10 +36,10 @@ function App() {
     <div className="app">
       <Router> {/* ✅ Ensure Router is wrapping Routes */}
         <Navbar />
-        <div className="main">
+        <div className="main-content">
           <Sidebar />
           <Player
-            songs={songsData}
+            songs={songsData[id]}
             currentSong={currentSong}
             setCurrentSong={setCurrentSong}
           />
@@ -94,6 +50,7 @@ function App() {
             <Route path="/player" element={<Player />} />
           </Routes>
         </div>
+        <Player />
       </Router> 
     </div>
   );

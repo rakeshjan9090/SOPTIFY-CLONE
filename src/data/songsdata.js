@@ -1,4 +1,4 @@
-import songsData from './data'; 
+import songsData from './songsdata'; 
 
 const songsData = [
     {
@@ -50,6 +50,6 @@ const songsData = [
       coverPath: "src/assets/covers/cover8.jpg",
     },
   ];
-  console.log(songsData);
+  
   export default songsData;
   
