@@ -3,6 +3,11 @@
   font-family: Arial, sans-serif;
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

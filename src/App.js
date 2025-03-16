@@ -1,28 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-
+import './App.css'; 
 import React, { useState, } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-// import About from "./pages/About";
-// import Services from "./pages/Service";
-//import Contact from "./pages/Contact";
-
-import Library from "./pages/Library";
-
-import Sidebar from "./components/Sidebar";
-import Player from "./components/Player";
-// Remove unused imports
-// import logo from './logo.svg'; 
-import Search from 'src\pages\Search.js; // Ensure correct import
-
-
-
-
-
-import "./styles/global.css";
+import './App.css'; 
+import Navbar from './components/Navbar'; 
+import Sidebar from './components/Sidebar'; 
+import Player from './components/Player'; 
+import Home from './pages/Home'; 
+import Library from './pages/Library'; 
+import './styles/global.css'; 
+import logo from './logo.svg'; 
 
 function App() {
   const [currentSong, setCurrentSong] = useState(songsData[0]);
@@ -50,7 +36,6 @@ function App() {
             <Route path="/player" element={<Player />} />
           </Routes>
         </div>
-        <Player />
       </Router> 
     </div>
   );
