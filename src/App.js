@@ -16,7 +16,7 @@ import Sidebar from "./components/Sidebar";
 import Player from "./components/Player";
 // Remove unused imports
 // import logo from './logo.svg'; 
-import Search from './pages/Search'; // Ensure correct import
+import Search from 'src\pages\Search.js; // Ensure correct import
 
 
 
@@ -39,7 +39,7 @@ function App() {
         <div className="main-content">
           <Sidebar />
           <Player
-            songs={songsData[id]}
+            songs={songsData}
             currentSong={currentSong}
             setCurrentSong={setCurrentSong}
           />
