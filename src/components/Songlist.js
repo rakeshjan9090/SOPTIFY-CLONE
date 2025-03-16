@@ -2,11 +2,13 @@ import React, { useState, useRef } from "react";
 import SongCard from "./SongCard";
 import "./SongList.css";
 
-const songs = [
-  { songName: "Diya Aur Baati Hum", filePath: "/songs/1.mp3", coverPath: "/covers/cover1.jpg" },
-  { songName: "Har Funn Maula", filePath: "/songs/2.mp3", coverPath: "/covers/cover2.jpg" },
-  { songName: "Guilty - Karan Aujla", filePath: "/songs/3.mp3", coverPath: "/covers/cover3.jpg" },
-];
+const [songsData, setSongsData] = React.useState([]);
+
+React.useEffect(() => {
+  fetch("songs.json")
+    .then((res) => res.json())
+    .then((data) => setSongsData(data));
+}, [])
 
 const SongList = () => {
   const [currentSong, setCurrentSong] = useState(null);

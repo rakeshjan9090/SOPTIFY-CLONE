@@ -8,7 +8,6 @@ import Player from './components/Player';
 import Home from './pages/Home'; 
 import Library from './pages/Library'; 
 import './styles/global.css'; 
-import logo from './logo.svg'; 
 
 function App() {
   const [currentSong, setCurrentSong] = useState(songsData[0]);
@@ -20,7 +19,7 @@ function App() {
 
   return (
     <div className="app">
-      <Router> {/* ✅ Ensure Router is wrapping Routes */}
+      <Router> 
         <Navbar />
         <div className="main-content">
           <Sidebar />
@@ -29,7 +28,6 @@ function App() {
             currentSong={currentSong}
             setCurrentSong={setCurrentSong}
           />
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/library" element={<Library />} />

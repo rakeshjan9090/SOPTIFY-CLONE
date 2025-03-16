@@ -1,4 +1,4 @@
-import songsData from './songsdata'; 
+import songsData from './data/songsdata.js'; 
 
 const songsData = [
     {
